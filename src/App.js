@@ -1,21 +1,20 @@
-import React, { useEffect, useRef, useCallback, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDropzone } from "react-dropzone";
 
 import "@tensorflow/tfjs-backend-cpu";
 import "@tensorflow/tfjs-backend-webgl";
 import "@tensorflow/tfjs";
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
-import * as mobileNet from '@tensorflow-models/mobilenet';
 
 import "./App.css";
 import { draw } from "./draw";
 import Canvas from "./canvas";
 
 const App = () => {
-  const [uploadedImage, setUploadedImage] = useState();
+  //const [uploadedImage, setUploadedImage] = useState();
 
   const videoCanvasRef = useRef(null);
-  const imageCanvasRef = useRef(null);
+  //const imageCanvasRef = useRef(null);
 
   const setupCamera = () => {
     const video = document.getElementById("video");
@@ -60,7 +59,7 @@ const App = () => {
   useEffect(() => {
     runCocoSsd();
     setupCamera();
-  }, []);
+  });
 
   // useEffect(() => {
   //   if(uploadedImage) getImagePredictions(imageCanvasRef);
@@ -95,10 +94,10 @@ const App = () => {
   //   setUploadedImage(newImage);
   // }, []);
 
-  const { getRootProps, getInputProps } = useDropzone({
-    accept: "image/jpeg, image/png",
-    // onDrop,
-  });
+  // const { getRootProps, getInputProps } = useDropzone({
+  //   accept: "image/jpeg, image/png",
+  //   // onDrop,
+  // });
 
   return (
     <div className="App">
