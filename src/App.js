@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useDropzone } from "react-dropzone";
+import React, { useEffect, useRef } from "react";
 
 import "@tensorflow/tfjs-backend-cpu";
 import "@tensorflow/tfjs-backend-webgl";
