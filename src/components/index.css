@@ -1,0 +1,4 @@
+@import "./navbar/navbar.css";
+@import "./face-detection/face-detection.css";
+@import "./image-detection/image-detection.css";
+@import "./sign-detection/sign-detection.css";

@@ -1,15 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from 'react';
 
 import "@tensorflow/tfjs-backend-cpu";
 import "@tensorflow/tfjs-backend-webgl";
 import "@tensorflow/tfjs";
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
 
-import "./App.css";
-import { draw } from "./draw";
-import Canvas from "./canvas";
+import Canvas from "../common/canvas";
+import { draw } from '../../utils/draw';
 
-const App = () => {
+const FaceDetection = () => {
   //const [uploadedImage, setUploadedImage] = useState();
 
   const videoCanvasRef = useRef(null);
@@ -81,7 +80,6 @@ const App = () => {
   //   draw(predictions, ctx);
   // }
 
-
   // const onDrop = useCallback((acceptedFiles) => {
   //   const newImage = {};
   //   acceptedFiles.forEach((file) => {
@@ -99,7 +97,7 @@ const App = () => {
   // });
 
   return (
-    <div className="App">
+    <div className="tensorflow__face-detection_container">
       <h1>Face Detection</h1>
       <video id="video" autoPlay />
       <Canvas canvasRef={videoCanvasRef} />
@@ -121,4 +119,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default FaceDetection;

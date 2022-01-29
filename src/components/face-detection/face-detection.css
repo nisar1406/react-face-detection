@@ -1,0 +1,11 @@
+.tensorflow__face-detection_container {
+  text-align: center;
+}
+
+.tensorflow__face-detection_container h1 {
+  color: #fff;
+}
+
+.tensorflow__face-detection_container video {
+  padding: 30px;
+}
