@@ -1,0 +1,14 @@
+.tensorflow__sign-detection_container {
+  text-align: center;
+}
+
+.tensorflow__sign-detection_container h1 {
+  color: #fff;
+}
+
+.tensorflow__sign-detection_container video canvas {
+  padding: 30px;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg); /* Safari and Chrome */
+  -moz-transform: rotateY(180deg); /* Firefox */
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Canvas = ({canvasRef}) => {
+const Canvas = ({ canvasRef }) => {
   return (
     <canvas
       ref={canvasRef}
@@ -12,8 +12,9 @@ const Canvas = ({canvasRef}) => {
         right: 0,
         textAlign: "center",
         zindex: 8,
-        width: 640,
-        height: 480,
+        width: 700,
+        height: 550,
+        top: 165
       }}
     />);
 };
