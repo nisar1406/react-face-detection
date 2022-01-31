@@ -6,14 +6,14 @@ import * as FingerPose from "fingerpose";
 import Canvas from "../common/canvas";
 import StreamVideo from "../common/stream-video/stream-video";
 
-import { drawHand } from '../../utils/draw';
+import { drawHand } from "../../utils/draw";
 
-import thumbsUp from '../../assets/images/thumbs_up.png';
-import victory from '../../assets/images/victory.png';
+import thumbsUp from "../../assets/images/thumbs_up.png";
+import victory from "../../assets/images/victory.png";
 
 const predictionIcons = {
   thumbs_up: thumbsUp,
-  victory: victory
+  victory: victory,
 };
 
 const SignDetection = () => {
@@ -31,7 +31,6 @@ const SignDetection = () => {
     }, 10);
   };
 
-
   const getHandPosePredictions = async (handPoseModal) => {
     const video = document.getElementById("video");
     const ctx = videoCanvasRef.current.getContext("2d");
@@ -39,7 +38,6 @@ const SignDetection = () => {
     const predictions = await handPoseModal.estimateHands(video);
 
     if (predictions.length > 0) {
-
       videoCanvasRef.current.width = video?.videoWidth;
       videoCanvasRef.current.height = video?.videoHeight;
 
@@ -51,9 +49,7 @@ const SignDetection = () => {
       if (gesture.gestures !== undefined && gesture.gestures.length > 0) {
         // console.log(gesture.gestures);
 
-        const confidence = gesture?.gestures.map(
-          ({ score }) => score
-        );
+        const confidence = gesture?.gestures.map(({ score }) => score);
         const maxConfidence = confidence.indexOf(
           Math.max.apply(null, confidence)
         );
@@ -70,7 +66,7 @@ const SignDetection = () => {
 
   useEffect(() => {
     runHandPose();
-  }, []);
+  });
 
   return (
     <div className="tensorflow__sign-detection_container">
@@ -79,6 +75,7 @@ const SignDetection = () => {
       <Canvas canvasRef={videoCanvasRef} />
       {emoji !== null && (
         <img
+          alt="emoji"
           src={predictionIcons[emoji]}
           style={{
             position: "absolute",
